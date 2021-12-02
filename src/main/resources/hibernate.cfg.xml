@@ -18,7 +18,7 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 		<!-- on montre les requetes sql -->
-		<property name="show_sql">true</property>
+		<!--  <property name="show_sql">true</property>-->
 	
 		<!-- on mappe les entités à la BDD -->
 		<mapping class = "entities.Employee"/>

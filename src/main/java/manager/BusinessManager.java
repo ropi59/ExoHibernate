@@ -100,11 +100,20 @@ public class BusinessManager {
 		return employee;
 	}
 	
-//	protected Employee readAll() {
-//		//on ouvre la session
-//		Session session = sessionFactory.openSession();
-//		
-//	}
+	protected void readAll() {
+		//on ouvre la session
+		Session session = sessionFactory.openSession();
+//		List<Employee> listEmployees = new ArrayList();
+//		Employee employee = this.read(id);
+		for (int i = 1; i < 10000; i++) {	
+			if(read(i) != null) {
+				
+				//on appelle l'employe par son id
+				Employee employee = this.read(i);
+			}
+		}
+	      session.close();
+	}
 	
 	protected void update(long id, Employee newEmployee) {
 		Employee employee = this.read(id);
@@ -157,7 +166,7 @@ public class BusinessManager {
 		//initialisation de la session
 		businessManager.setup();
 		//creation d'un employe
-		businessManager.create();
+//		businessManager.create();
 		
 		//nouvelles données d'un employe
 //		Employee employee = new Employee();
@@ -171,10 +180,14 @@ public class BusinessManager {
 //		businessManager.delete(exEmployee);
 		
 		//voir les données d'un employe
-		businessManager.read(1);
+		System.out.println();
+		System.out.println("Voici les données de l'employé id 7");
+		businessManager.read(7);
 		
 		//voir la liste de tous les employees
-		//businessManager.readAll()
+		System.out.println();
+		System.out.println("Voici la liste de tous les employés :");
+		businessManager.readAll();
 		
 		businessManager.exit();
 	}
